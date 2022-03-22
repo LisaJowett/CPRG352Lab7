@@ -1,8 +1,8 @@
-package ca.sait.cprg352lab6.services;
+package ca.sait.cprg352lab7.services;
 
-import ca.sait.cprg352lab6.dataaccess.UserDB;
-import ca.sait.cprg352lab6.models.Role;
-import ca.sait.cprg352lab6.models.User;
+import ca.sait.cprg352lab7.dataaccess.UserDB;
+import ca.sait.cprg352lab7.models.Role;
+import ca.sait.cprg352lab7.models.User;
 import java.util.List;
 
 public class UserService 

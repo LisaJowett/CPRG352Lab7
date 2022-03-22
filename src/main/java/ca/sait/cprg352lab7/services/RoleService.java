@@ -1,7 +1,7 @@
-package ca.sait.cprg352lab6.services;
+package ca.sait.cprg352lab7.services;
 
-import ca.sait.cprg352lab6.dataaccess.RoleDB;
-import ca.sait.cprg352lab6.models.Role;
+import ca.sait.cprg352lab7.dataaccess.RoleDB;
+import ca.sait.cprg352lab7.models.Role;
 import java.util.List;
 
 public class RoleService 

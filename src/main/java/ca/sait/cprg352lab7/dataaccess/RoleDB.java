@@ -1,6 +1,6 @@
-package ca.sait.cprg352lab6.dataaccess;
+package ca.sait.cprg352lab7.dataaccess;
 
-import ca.sait.cprg352lab6.models.Role;
+import ca.sait.cprg352lab7.models.Role;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,8 +13,8 @@ public class RoleDB
     public List<Role> getAll() throws Exception 
     {
         List<Role> roles = new ArrayList<>();
-        ConnectionPool cp = ConnectionPool.getInstance();
-        Connection con = cp.getConnection();
+        //ConnectionPool cp = ConnectionPool.getInstance();
+        //Connection con = cp.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
         
@@ -22,7 +22,7 @@ public class RoleDB
         
         try 
         {
-            ps = con.prepareStatement(sql);
+            //ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
             while (rs.next()) 
@@ -39,7 +39,7 @@ public class RoleDB
             {
                 DBUtil.closeResultSet(rs);
                 DBUtil.closePreparedStatement(ps);
-                cp.freeConnection(con);
+                //cp.freeConnection(con);
             }
 
         return roles;
@@ -47,8 +47,8 @@ public class RoleDB
 
     public int getToRoleID(String roleName) throws Exception 
     {
-        ConnectionPool cp = ConnectionPool.getInstance();
-        Connection con = cp.getConnection();
+        //ConnectionPool cp = ConnectionPool.getInstance();
+        //Connection con = cp.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
         int id = -1;
@@ -57,7 +57,7 @@ public class RoleDB
 
         try
         {
-            ps = con.prepareStatement(sql);
+            //ps = con.prepareStatement(sql);
             ps.setString(1, roleName);
             rs = ps.executeQuery();
 
@@ -72,7 +72,7 @@ public class RoleDB
         {
             DBUtil.closeResultSet(rs);
             DBUtil.closePreparedStatement(ps);
-            cp.freeConnection(con);
+            //cp.freeConnection(con);
         }
 
         return id;

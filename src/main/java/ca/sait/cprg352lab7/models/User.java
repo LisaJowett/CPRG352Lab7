@@ -1,18 +1,35 @@
-package ca.sait.cprg352lab6.models;
+package ca.sait.cprg352lab7.models;
 
 import java.io.Serializable;
+import javax.persistence.*;
 
 /**
  * Represents a user.
  * @author Lisa Jowett
  */
+@Entity
+@Table(name = "user")
+@NamedQueries(
+    {
+        @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
+    })
+
 public class User implements Serializable 
 {
+    @Id
+    @Basic
+    @Column
     private String email;
+    @Column
     private boolean active;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column
     private String password;
+    @ManyToOne(targetEntity = Role.class)
+    @JoinColumn(name = "role", referencedColumnName = "role_id")
     private Role role;
 
 public User()

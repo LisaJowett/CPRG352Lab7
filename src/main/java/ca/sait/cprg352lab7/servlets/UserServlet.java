@@ -1,9 +1,9 @@
-package ca.sait.cprg352lab6.servlets;
+package ca.sait.cprg352lab7.servlets;
 
-import ca.sait.cprg352lab6.models.Role;
-import ca.sait.cprg352lab6.models.User;
-import ca.sait.cprg352lab6.services.UserService;
-import ca.sait.cprg352lab6.services.RoleService;
+import ca.sait.cprg352lab7.models.Role;
+import ca.sait.cprg352lab7.models.User;
+import ca.sait.cprg352lab7.services.UserService;
+import ca.sait.cprg352lab7.services.RoleService;
 import java.io.*;
 import java.util.List;
 import java.util.logging.Level;
