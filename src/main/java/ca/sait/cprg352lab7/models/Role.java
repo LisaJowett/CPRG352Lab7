@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Role implements Serializable 
 {
     @Id //primary key
-    @Basic
+    @Basic(optional = false)
     @Column(name = "role_id")
     private int id;
 

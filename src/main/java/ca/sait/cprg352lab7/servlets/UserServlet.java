@@ -37,7 +37,7 @@ public class UserServlet extends HttpServlet
         RoleService serviceRole = new RoleService();
         String email = request.getParameter("email");
         String action = request.getParameter("action");
-
+    
         try
         {
             List<User> users = serviceUser.getAll();
@@ -95,6 +95,7 @@ public class UserServlet extends HttpServlet
         RoleService serviceRole = new RoleService();
         
         String action = request.getParameter("action");
+        int roleId = 0;
 
         try
         {
@@ -130,9 +131,6 @@ public class UserServlet extends HttpServlet
                 String lastName = request.getParameter("editLastName");
                 String password = request.getParameter("editPassword");
                 String roleName = request.getParameter("editRoleName");
-
-                int roleId = serviceRole.getRoleId(roleName);
-
                 serviceUser.update(email, true, firstName, lastName, password, new Role(roleId, roleName));
             }
 
@@ -153,7 +151,7 @@ public class UserServlet extends HttpServlet
                 String password = request.getParameter("addPassword");
                 String roleName = request.getParameter("addRoleName");
 
-                int roleId = serviceRole.getRoleId(roleName);
+                roleId = roleScan(request.getParameter("addRoleName"));
 
                 serviceUser.insert(email, true, firstName, lastName, password, new Role(roleId, roleName));
             }
@@ -166,4 +164,26 @@ public class UserServlet extends HttpServlet
 
         this.getServletContext().getRequestDispatcher("/WEB-INF/users.jsp").forward(request, response);
     }  
+
+        private int roleScan(String roleName)
+        {
+            int roleId = 0;
+
+            if (roleName.equals("sysadmin"))
+            {
+                roleId = 1;
+            }
+
+            else if(roleName.equals("regularUser"))
+            {
+                roleId = 2;
+            }
+
+            else
+            {
+                roleId = 3;
+            }
+        return roleId;
+        }
 }
+
