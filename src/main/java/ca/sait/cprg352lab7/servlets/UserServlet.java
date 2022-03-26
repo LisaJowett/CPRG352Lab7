@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -167,7 +166,7 @@ public class UserServlet extends HttpServlet
 
         private int roleScan(String roleName)
         {
-            int roleId = 0;
+            int roleId;
 
             if (roleName.equals("sysadmin"))
             {
