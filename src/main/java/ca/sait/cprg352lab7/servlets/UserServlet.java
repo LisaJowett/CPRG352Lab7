@@ -166,7 +166,7 @@ public class UserServlet extends HttpServlet
 
         private int roleScan(String roleName)
         {
-            int roleId;
+            int roleId = 0;
 
             if (roleName.equals("sysadmin"))
             {
